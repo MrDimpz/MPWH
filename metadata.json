@@ -1,0 +1,6 @@
+{
+  "name": "Word Hunt — Gorilla Shack Edition",
+  "description": "Alphabetical word-ladder puzzle game featuring Classic, Dual-Word Ladder, and Quad 4-Board simultaneous modes with real-time WebSocket multiplayer and live leaderboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

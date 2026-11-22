@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #0F1613;
+    color: #F4F1EA;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle custom scrollbar for tall alphabetical ladders */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 241, 234, 0.14);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 241, 234, 0.28);
+}
+
+@keyframes tileReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-tile-reveal {
+  animation: tileReveal 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes ladderFlash {
+  0% {
+    background-color: rgba(245, 184, 46, 0.24);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.animate-ladder-flash {
+  animation: ladderFlash 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-tile-reveal,
+  .animate-ladder-flash {
+    animation: none !important;
+  }
+}
